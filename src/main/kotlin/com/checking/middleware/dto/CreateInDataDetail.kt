@@ -1,0 +1,33 @@
+data class CreateInDataDetail(
+    val rcvSq: Int,
+    val itemCd: String,
+    val poQt: Double?,
+    val rcvQt: Double?,
+    val rcvUm: Double?, // 누락되었던 필드 추가
+    val rcvgAm: Double?,
+    val rcvvAm: Double?,
+    val rcvhAm: Double?,
+    val exchCd: String,
+    val exchRt: Double?,
+    val exchUm: Double?,
+    val exchAm: Double?,
+    val lotNb: String?,
+    val poNb: String?,
+    val poSq: Int?,
+    val reqNb: String?,
+    val reqSq: Int?, // 오타 수정
+    val iblNb: String?,
+    val iblSq: Int?,
+    val umFg: String?,
+    val lcCd: String,
+    val remarkDc: String?,
+    val vatUm: Double?,
+    val qcNb: String?,
+    val qcSq: Int?,
+    val rcvNbOrg: String?,
+    val rcvSqOrg: Int?,
+    val mgmtCd: String?,
+    val pjtCd: String?,
+    val itembomCd: String?,
+    val itemsetCd: String?
+)
