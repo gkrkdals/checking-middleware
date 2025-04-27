@@ -1,4 +1,4 @@
-package com.checking.middleware.dto
+package com.checking.middleware.dto.material
 
 data class CreateOutsourcedInDetail(
     val rcvSq: Int, // 입고순번

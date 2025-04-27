@@ -2,6 +2,7 @@ package com.checking.middleware.util
 
 import com.checking.middleware.dto.response.BaseResponseDTO
 import com.checking.middleware.enums.AllowedMethod
+import org.springframework.http.ResponseEntity
 import org.springframework.web.reactive.function.client.WebClient
 import org.springframework.web.reactive.function.client.awaitBody
 import java.security.SecureRandom
@@ -76,6 +77,6 @@ suspend fun client(
     uri: String,
     method: AllowedMethod,
     body: Any? = null
-): BaseResponseDTO {
-    return webClientCall<BaseResponseDTO>(uri, method, body)
+): ResponseEntity<BaseResponseDTO> {
+    return ResponseEntity.ok(webClientCall<BaseResponseDTO>(uri, method, body))
 }
