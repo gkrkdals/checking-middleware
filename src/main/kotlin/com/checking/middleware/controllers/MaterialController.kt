@@ -29,7 +29,7 @@ class MaterialController(val materialService: MaterialService) {
         description = "입고정보를 등록합니다."
     )
     @PostMapping("/api20A02I00201")
-    suspend fun createInData(@RequestBody params: CreateInDataDTO): ResponseEntity<BaseResponseDTO> {
+    suspend fun createInData(@RequestBody params: CreateInDataDTO): ResponseEntity<Any> {
         return materialService.createInData(params)
     }
 
@@ -38,7 +38,7 @@ class MaterialController(val materialService: MaterialService) {
         description = "입고정보를 삭제합니다."
     )
     @PostMapping("/api20A02D00201")
-    suspend fun deleteInData(@RequestBody params: DeleteInDTO): ResponseEntity<BaseResponseDTO> {
+    suspend fun deleteInData(@RequestBody params: DeleteInDTO): ResponseEntity<Any> {
         return materialService.deleteInData(params)
     }
     //----- 입고정보 -----//
@@ -49,7 +49,7 @@ class MaterialController(val materialService: MaterialService) {
         description = "생산입고 정보를 등록합니다."
     )
     @PostMapping("/api20A02I00701")
-    suspend fun createProdIn(@RequestBody params: CreateProdInDTO): ResponseEntity<BaseResponseDTO> {
+    suspend fun createProdIn(@RequestBody params: CreateProdInDTO): ResponseEntity<Any> {
         return materialService.createProdIn(params)
     }
 
@@ -58,7 +58,7 @@ class MaterialController(val materialService: MaterialService) {
         description = "생산입고 정보를 삭제합니다."
     )
     @PostMapping("/api20A02D00701")
-    suspend fun deleteProdIn(@RequestBody params: DeleteProdInDTO): ResponseEntity<BaseResponseDTO> {
+    suspend fun deleteProdIn(@RequestBody params: DeleteProdInDTO): ResponseEntity<Any> {
         return materialService.deleteProdIn(params)
     }
     //----- 생산입고 -----//
@@ -69,7 +69,7 @@ class MaterialController(val materialService: MaterialService) {
         description = "외주입고 정보를 등록합니다."
     )
     @PostMapping("/api20A02I02201")
-    suspend fun createOutsourcedIn(@RequestBody params: CreateOutsourcedInDTO): ResponseEntity<BaseResponseDTO> {
+    suspend fun createOutsourcedIn(@RequestBody params: CreateOutsourcedInDTO): ResponseEntity<Any> {
         return materialService.createOutsourcedIn(params)
     }
 
@@ -78,7 +78,7 @@ class MaterialController(val materialService: MaterialService) {
         description = "외주입고 정보를 삭제합니다."
     )
     @PostMapping("/api20A02D02201")
-    suspend fun deleteOutsourcedIn(@RequestBody params: DeleteOutsourcedInDTO): ResponseEntity<BaseResponseDTO> {
+    suspend fun deleteOutsourcedIn(@RequestBody params: DeleteOutsourcedInDTO): ResponseEntity<Any> {
         return materialService.deleteOutsourcedIn(params)
     }
     //----- 외주입고 -----//
@@ -89,7 +89,7 @@ class MaterialController(val materialService: MaterialService) {
         description = "생산출고 정보를 등록합니다."
     )
     @PostMapping("/api20A02I00801")
-    suspend fun createProdOut(@RequestBody params: CreateProdOutDTO): ResponseEntity<BaseResponseDTO> {
+    suspend fun createProdOut(@RequestBody params: CreateProdOutDTO): ResponseEntity<Any> {
         return materialService.createProdOut(params)
     }
 
@@ -98,7 +98,7 @@ class MaterialController(val materialService: MaterialService) {
         description = "생산출고 정보를 삭제합니다."
     )
     @PostMapping("/api20A02D00801")
-    suspend fun deleteProdOut(@RequestBody params: DeleteProdOutDTO): ResponseEntity<BaseResponseDTO> {
+    suspend fun deleteProdOut(@RequestBody params: DeleteProdOutDTO): ResponseEntity<Any> {
         return materialService.deleteProdOut(params)
     }
     //----- 생산출고 -----//
@@ -109,7 +109,7 @@ class MaterialController(val materialService: MaterialService) {
         description = "외주출고 정보를 등록합니다."
     )
     @PostMapping("/api20A02I01001")
-    suspend fun createOutsourcedOut(@RequestBody params: CreateOutsourcedOutDTO): ResponseEntity<BaseResponseDTO> {
+    suspend fun createOutsourcedOut(@RequestBody params: CreateOutsourcedOutDTO): ResponseEntity<Any> {
         return materialService.createOutsourcedOut(params)
     }
 
@@ -118,7 +118,7 @@ class MaterialController(val materialService: MaterialService) {
         description = "외주출고 정보를 삭제합니다."
     )
     @PostMapping("/api20A02D01001")
-    suspend fun deleteOutsourcedOut(@RequestBody params: DeleteOutsourcedOutDTO): ResponseEntity<BaseResponseDTO> {
+    suspend fun deleteOutsourcedOut(@RequestBody params: DeleteOutsourcedOutDTO): ResponseEntity<Any> {
         return materialService.deleteOutsourcedOut(params)
     }
     //----- 외주출고 -----//
@@ -129,7 +129,7 @@ class MaterialController(val materialService: MaterialService) {
         description = "재고조정 기본 정보를 등록합니다."
     )
     @PostMapping("/api20A02I01301")
-    suspend fun createStockAdjBasic(@RequestBody params: CreateStockAdjBasicDTO): ResponseEntity<BaseResponseDTO> {
+    suspend fun createStockAdjBasic(@RequestBody params: CreateStockAdjBasicDTO): ResponseEntity<Any> {
         return materialService.createStockAdjBasic(params)
     }
 
@@ -138,7 +138,7 @@ class MaterialController(val materialService: MaterialService) {
         description = "재고조정 입고 정보를 등록합니다."
     )
     @PostMapping("/api20A02I01303")
-    suspend fun createStockAdjIn(@RequestBody params: CreateStockAdjInDTO): ResponseEntity<BaseResponseDTO> {
+    suspend fun createStockAdjIn(@RequestBody params: CreateStockAdjInDTO): ResponseEntity<Any> {
         return materialService.createStockAdjIn(params)
     }
 
@@ -147,7 +147,7 @@ class MaterialController(val materialService: MaterialService) {
         description = "재고조정 출고 정보를 등록합니다."
     )
     @PostMapping("/api20A02I01305")
-    suspend fun createStockAdjOut(@RequestBody params: CreateStockAdjOutDTO): ResponseEntity<BaseResponseDTO> {
+    suspend fun createStockAdjOut(@RequestBody params: CreateStockAdjOutDTO): ResponseEntity<Any> {
         return materialService.createStockAdjOut(params)
     }
 
@@ -156,7 +156,7 @@ class MaterialController(val materialService: MaterialService) {
         description = "재고조정 정보를 삭제합니다."
     )
     @PostMapping("/api20A02D01301")
-    suspend fun deleteStockAdj(@RequestBody params: DeleteStockAdjDTO): ResponseEntity<BaseResponseDTO> {
+    suspend fun deleteStockAdj(@RequestBody params: DeleteStockAdjDTO): ResponseEntity<Any> {
         return materialService.deleteStockAdj(params)
     }
     //----- 재고조정 -----//

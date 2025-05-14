@@ -1,7 +1,7 @@
 package com.checking.middleware.dto.response
 
-data class BaseResponseDTO(
+data class ErrorResponseDTO(
     val resultCode: Int,
     val resultMsg: String,
-    val resultData: Any? = null
+    val statusValue: Int
 )

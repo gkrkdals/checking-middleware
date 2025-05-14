@@ -38,7 +38,7 @@ class BusinessController(private val businessService: BusinessService) {
         description = "수금정보를 등록합니다."
     )
     @PostMapping("/api20A01I00601")
-    suspend fun createCollectionInformation(@RequestBody params: CreateCollectionInformationDTO): ResponseEntity<BaseResponseDTO> {
+    suspend fun createCollectionInformation(@RequestBody params: CreateCollectionInformationDTO): ResponseEntity<Any> {
         return businessService.createCollectionInformation(params)
     }
 
@@ -47,7 +47,7 @@ class BusinessController(private val businessService: BusinessService) {
         description = "수금정보를 삭제합니다."
     )
     @PostMapping("/api20A01D00601")
-    suspend fun deleteCollectionInformation(@RequestBody params: DeleteCollectionInformationDTO): ResponseEntity<BaseResponseDTO> {
+    suspend fun deleteCollectionInformation(@RequestBody params: DeleteCollectionInformationDTO): ResponseEntity<Any> {
         return businessService.deleteCollectionInformation(params)
     }
 
@@ -56,7 +56,7 @@ class BusinessController(private val businessService: BusinessService) {
         description = "출고정보를 등록합니다."
     )
     @PostMapping("/api20A01I00201")
-    suspend fun createOutInformation(@RequestBody params: CreateOutInformationDTO): ResponseEntity<BaseResponseDTO> {
+    suspend fun createOutInformation(@RequestBody params: CreateOutInformationDTO): ResponseEntity<Any> {
         return businessService.createOutInformation(params)
     }
 
@@ -65,7 +65,7 @@ class BusinessController(private val businessService: BusinessService) {
         description = "출고정보를 삭제합니다."
     )
     @PostMapping("/api20A01D00201")
-    suspend fun deleteOutInformation(@RequestBody params: DeleteOutInformationDTO): ResponseEntity<BaseResponseDTO> {
+    suspend fun deleteOutInformation(@RequestBody params: DeleteOutInformationDTO): ResponseEntity<Any> {
         return businessService.deleteOutInformation(params)
     }
 }
