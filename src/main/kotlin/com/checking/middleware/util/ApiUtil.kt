@@ -24,34 +24,6 @@ val webClient: WebClient = WebClient.builder().build()
 
 fun getTimestamp() = System.currentTimeMillis() / 1000
 
-fun hmac(value: String): String? =
-    runCatching {
-        Mac.getInstance("HmacSHA256").apply {
-            init(SecretKeySpec(hashKey.toByteArray(Charsets.UTF_8), "HmacSHA256"))
-            update(value.toByteArray(Charsets.UTF_8))
-        }.doFinal(value.toByteArray(Charsets.UTF_8))
-            .let { Base64.getEncoder().encodeToString(it) }
-    }.getOrElse {
-        println("AuthCallUnit.hmac-Error: $it")
-        it.printStackTrace()
-        null
-    }
-
-fun hmac2(key: String, value: String): String? {
-    try {
-        val keySpec = SecretKeySpec(key.toByteArray(), "HmacSHA256")
-        val mac = Mac.getInstance("HmacSHA256")
-        mac.init(keySpec)
-        val result = mac.doFinal(value.toByteArray())
-        return DatatypeConverter.printBase64Binary(result)
-    } catch (e: Exception) {
-        println("AuthCallUtil.hmac-Error: $e")
-        e.printStackTrace()
-    }
-
-    return null
-}
-
 fun getTransactionId(): String {
     val chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
     val randomString = (1..32)
@@ -60,15 +32,6 @@ fun getTransactionId(): String {
 
     return randomString
 }
-
-//fun getWehagoSign(uri: String): String? = hmac(
-//    value = accessToken + getTransactionId() + getTimestamp() + uri
-//)
-
-//fun getWehagoSign(uri: String): String? = hmac2(
-//    key = hashKey,
-//    value = accessToken + getTransactionId() + getTimestamp() + uri
-//)
 
 fun getWehagoSign(uri: String): String? = Hmac.hmac(hashKey, accessToken + getTransactionId() + getTimestamp() + uri)
 
