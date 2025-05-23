@@ -13,7 +13,7 @@ data class CreateStockAdjBasicDetail(
     val itemCd: String,
 
     @field:Schema(description = "기초수량", example = "100.000000")
-    val openQt: BigDecimal,
+    val openQt: BigDecimal?,
 
     @field:Schema(description = "입고수량", example = "10.000000")
     val rcvQt: BigDecimal?,
